@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# Air-Pollution-Forecasting
+An LSTM model to predict the pollution levels in the next hour using the weather conditions and pollution levels in the current hour. I have trained the model using both uni-variate(if we consider only one feature) and multi-variate(when we consider multiple features for prediction).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Dataset
+In this, I have used the Air Quality dataset. This is a dataset that reports on the weather and the level of pollution each hour for five years at the US embassy in Beijing, China. The data includes the date-time, the pollution called PM2.5 concentration, and the weather information including dew point, temperature, pressure, wind direction, wind speed and the cumulative number of hours of snow and rain. 
 
-## Available Scripts
+## Steps followed
+- Data preparation
+- Data visualization
+- LSTM data preparation
+- Fit model along with regularization term
+- Evaluate model
 
-In the project directory, you can run:
+### Data preparation
+- Replace NA values
+- Parse date-time into pandas dataframe index
+- Specified clear names for each columns
 
-### `npm start`
+### Data visualization
+- Used boxplot
+- Correlation matrix
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### LSTM data preparation
+- Normalized data
+- Transformed dataset into supervised learning problem
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Model Fitting
+- Split data into train and test
+- Split into i/p and o/p
+- Reshape into 3D
+- Define 3 layer LSTM architecture with 50 neuron followed by 1 nueron LSTM
+- Add dropout at 20% after every layer
 
-### `npm test`
+### Evaluate model
+- Make prediction
+- Invert scaling
+- Plot the line graph between actual vs predicted values
+- Calculate RMSE(root mean squared errot) and MAPE(mean absolute percentage error)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Results
+<div style="float:left">
+<div style="float:left"><img src="https://github.com/jyoti0225/Air-Pollution-Forecasting/blob/master/output_graph.png" />
+</div>
+<br />
